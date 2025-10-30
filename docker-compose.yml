@@ -8,7 +8,7 @@ services:
     volumes:
       - ./database/db-init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5432:5432"
+      - "5433:5432"
   # backend section
   backend:
     build: ./backend
@@ -18,7 +18,7 @@ services:
       POSTGRES_DB: nimcdb
       POSTGRES_HOST: db
     ports:
-      - "5007:5000"
+      - "5000:5000"
     depends_on:
       - db
   #frontend section
